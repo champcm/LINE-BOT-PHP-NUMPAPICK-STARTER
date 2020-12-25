@@ -14,7 +14,7 @@ if (isset($events['ESP'])) {
 		
 	echo "OK";
 	}
-if (isset($events['events'])) {
+else if (isset($events['events'])) {
 	echo "line bot";
 	// Loop through each event
 	foreach ($events['events'] as $event) {
