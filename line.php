@@ -5,15 +5,17 @@ function send_LINE($content){
  // Access Token
 $access_token = 'fbNQQPSnAfS5iQULfs24gc/CJ+nK4J0TKkA1GQERH5IwJJyn5H0Uu3SgxVLq1iXQmWyo8SSPmSoKDqjeMcLNjsQOQ92YDXAOTeUbLuIQSDXGPGPqK81gciMzQu1YaCDBzgQJeekTtwhO2XPONmsGvQdB04t89/1O/w1cDnyilFU=';
 // แปลงเป็น JSON
+ 
 $events = json_decode($content, true);
 if (!empty($events['events'])) {
+    $textz = $events['ESP'];
     foreach ($events['events'] as $event) {
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
             // ข้อความที่ส่งกลับ มาจาก ข้อความที่ส่งมา
             // ร่วมกับ USER ID ของไลน์ที่เราต้องการใช้ในการตอบกลับ
             $messages = array(
                 'type' => 'text',
-                'text' => 'Reply message : '.$content['ESP']."\nUser ID : ".$event['source']['userId'],
+                'text' => 'Reply message : '.$textz."\nUser ID : ".$event['source']['userId'],
             );
             $post = json_encode(array(
                 'replyToken' => $event['replyToken'],
