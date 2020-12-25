@@ -13,7 +13,7 @@ if (!empty($events['events'])) {
             // ร่วมกับ USER ID ของไลน์ที่เราต้องการใช้ในการตอบกลับ
             $messages = array(
                 'type' => 'text',
-                'text' => 'Reply message : '.$event['ESP']."\nUser ID : ".$event['source']['userId'],
+                'text' => 'Reply message : '.$content['ESP']."\nUser ID : ".$event['source']['userId'],
             );
             $post = json_encode(array(
                 'replyToken' => $event['replyToken'],
