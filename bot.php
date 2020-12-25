@@ -9,7 +9,7 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 // Validate parsed JSON data
 
-if (isset($events['ESP'])) {	
+if (!is_null($events['ESP'])) {
 	send_LINE($content);
 		
 	echo "OK";
