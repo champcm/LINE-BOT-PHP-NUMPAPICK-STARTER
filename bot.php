@@ -10,9 +10,9 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 if (isset($events['ESP'])) {
 	
-	send_LINE($events);
+	send_LINE($content);
 		
-	echo "OK";
+	echo "OK = " . $content;
 	}
 else if (isset($events['events'])) {
 	echo "line bot";
