@@ -6,7 +6,6 @@ function send_LINE($events){
 $access_token = 'fbNQQPSnAfS5iQULfs24gc/CJ+nK4J0TKkA1GQERH5IwJJyn5H0Uu3SgxVLq1iXQmWyo8SSPmSoKDqjeMcLNjsQOQ92YDXAOTeUbLuIQSDXGPGPqK81gciMzQu1YaCDBzgQJeekTtwhO2XPONmsGvQdB04t89/1O/w1cDnyilFU=';
 // แปลงเป็น JSON
  
-if (!empty($events['events'])) {
     $textz = $events['ESP'] . 'XXXX';
     foreach ($events['events'] as $event) {
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
@@ -34,7 +33,6 @@ if (!empty($events['events'])) {
             echo $result;
         }
     }
-}
 
 }
 
