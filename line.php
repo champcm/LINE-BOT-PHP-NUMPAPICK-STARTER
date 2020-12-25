@@ -4,8 +4,6 @@
 function send_LINE($content){
  // Access Token
 $access_token = 'fbNQQPSnAfS5iQULfs24gc/CJ+nK4J0TKkA1GQERH5IwJJyn5H0Uu3SgxVLq1iXQmWyo8SSPmSoKDqjeMcLNjsQOQ92YDXAOTeUbLuIQSDXGPGPqK81gciMzQu1YaCDBzgQJeekTtwhO2XPONmsGvQdB04t89/1O/w1cDnyilFU=';
-// รับค่าที่ส่งมา
-$content = file_get_contents('php://input');
 // แปลงเป็น JSON
 $events = json_decode($content, true);
 if (!empty($events['events'])) {
