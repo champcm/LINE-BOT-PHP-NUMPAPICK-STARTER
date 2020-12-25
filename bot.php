@@ -8,13 +8,13 @@ $content = file_get_contents('php://input');
 
 $events = json_decode($content, true);
 // Validate parsed JSON data
-if (!is_null($events['ESP'])) {
+if (isset($events['ESP'])) {
 	
 	send_LINE($events['ESP']);
 		
 	echo "OK";
 	}
-if (!is_null($events['events'])) {
+if (isset($events['events'])) {
 	echo "line bot";
 	// Loop through each event
 	foreach ($events['events'] as $event) {
@@ -34,8 +34,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-$Topic = "NodeMCU1" ;
-$text = "Test";
-getMqttfromlineMsg($Topic,$text);
 echo "OK3";
 ?>
