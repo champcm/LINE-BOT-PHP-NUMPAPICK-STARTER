@@ -15,8 +15,6 @@ if (isset($events['ESP'])) {
 }
 
 if (isset($events['events'])) {
-	send_LINE($content);
-
 	echo "line bot";
 	// Loop through each event
 	foreach ($events['events'] as $event) {
