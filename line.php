@@ -2,12 +2,13 @@
   
 
 function send_LINE($content){
- $access_token = 'fbNQQPSnAfS5iQULfs24gc/CJ+nK4J0TKkA1GQERH5IwJJyn5H0Uu3SgxVLq1iXQmWyo8SSPmSoKDqjeMcLNjsQOQ92YDXAOTeUbLuIQSDXGPGPqK81gciMzQu1YaCDBzgQJeekTtwhO2XPONmsGvQdB04t89/1O/w1cDnyilFU='; 
+ // Access Token
+$access_token = 'fbNQQPSnAfS5iQULfs24gc/CJ+nK4J0TKkA1GQERH5IwJJyn5H0Uu3SgxVLq1iXQmWyo8SSPmSoKDqjeMcLNjsQOQ92YDXAOTeUbLuIQSDXGPGPqK81gciMzQu1YaCDBzgQJeekTtwhO2XPONmsGvQdB04t89/1O/w1cDnyilFU=';
 // รับค่าที่ส่งมา
-
- // แปลงเป็น JSON
- $events = json_decode($content, true);
- if (!empty($events['events'])) {
+$content = file_get_contents('php://input');
+// แปลงเป็น JSON
+$events = json_decode($content, true);
+if (!empty($events['events'])) {
     foreach ($events['events'] as $event) {
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
             // ข้อความที่ส่งกลับ มาจาก ข้อความที่ส่งมา
@@ -34,7 +35,8 @@ function send_LINE($content){
             echo $result;
         }
     }
- }
+}
+
 }
 
 ?>
