@@ -8,7 +8,7 @@ $access_token = 'fbNQQPSnAfS5iQULfs24gc/CJ+nK4J0TKkA1GQERH5IwJJyn5H0Uu3SgxVLq1iX
  
 $events = json_decode($content, true);
 if (!empty($events['events'])) {
-    $textz = $events['ESP'];
+    $textz = $events['ESP'] . 'XXXX';
     foreach ($events['events'] as $event) {
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
             // ข้อความที่ส่งกลับ มาจาก ข้อความที่ส่งมา
