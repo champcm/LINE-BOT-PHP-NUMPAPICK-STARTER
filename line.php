@@ -1,12 +1,11 @@
  <?php
   
 
-function send_LINE($content){
+function send_LINE($events){
  // Access Token
 $access_token = 'fbNQQPSnAfS5iQULfs24gc/CJ+nK4J0TKkA1GQERH5IwJJyn5H0Uu3SgxVLq1iXQmWyo8SSPmSoKDqjeMcLNjsQOQ92YDXAOTeUbLuIQSDXGPGPqK81gciMzQu1YaCDBzgQJeekTtwhO2XPONmsGvQdB04t89/1O/w1cDnyilFU=';
 // แปลงเป็น JSON
  
-$events = json_decode($content, true);
 if (!empty($events['events'])) {
     $textz = $events['ESP'] . 'XXXX';
     foreach ($events['events'] as $event) {
