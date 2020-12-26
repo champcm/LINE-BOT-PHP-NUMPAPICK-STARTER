@@ -14,10 +14,13 @@ $events = json_decode($content, true);
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			// Get text sent
-			$text = $event['message']['text'];
+			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+			
+			// Get text sent
+			$text = $event['message']['text'] . '|' . $replyToken;
+
 
 			// Build message to reply back
 
