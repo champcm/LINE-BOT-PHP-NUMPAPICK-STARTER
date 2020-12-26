@@ -9,7 +9,7 @@ function send_LINE($content){
  
  $messages = array(
     'type' => 'text',
-    'text' => 'Reply message : '. $result[0],
+    'text' => $result[0],
 );
 $post = json_encode(array(
     'replyToken' => $result[1],
