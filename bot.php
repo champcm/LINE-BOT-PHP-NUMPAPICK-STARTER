@@ -8,7 +8,11 @@ $content = file_get_contents('php://input');
 
 $events = json_decode($content, true);
 // Validate parsed JSON data
- if (isset($events['events'])) {
+if (isset($events['ESP']))
+{
+	send_LINE($events['ESP']);
+}
+else if (isset($events['events'])) {
 	echo "line bot";
 	// Loop through each event
 	foreach ($events['events'] as $event) {
